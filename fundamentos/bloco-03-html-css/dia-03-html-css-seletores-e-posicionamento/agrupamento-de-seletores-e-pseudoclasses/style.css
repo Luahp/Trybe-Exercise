@@ -1,0 +1,24 @@
+h1,
+p {
+  text-align: center;
+}
+.listaOrdenada {
+  background-color: aqua;
+}
+
+.listaOrdenada :hover {
+  background-color: pink;
+}
+
+.listaOrdenada :active {
+  font-family: 'Courier New', Courier, monospace;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.listaOrdenada,
+.listaNaoOrdenada {
+  list-style: none;
+}
