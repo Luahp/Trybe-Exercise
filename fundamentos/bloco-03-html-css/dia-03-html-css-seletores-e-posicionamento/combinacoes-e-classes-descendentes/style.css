@@ -1,0 +1,53 @@
+ol {
+  background-color: yellow;
+}
+ol .ordenedPar {
+  color: green;
+}
+ol .ordenedUnique {
+  text-transform: uppercase;
+}
+.header {
+  color: red;
+}
+.header em {
+  font-size: 40px;
+  border: 1px solid black;
+}
+li {
+  font-size: 20px;
+}
+li em {
+  font-weight: bold;
+}
+
+.technology {
+  color: rgb(98, 154, 206);
+}
+
+.technology.java {
+  background-color: pink;
+}
+
+li a {
+  text-decoration: none;
+}
+
+.tools:hover {
+  font-weight: bold;
+}
+.tools.stackOverflow:hover {
+  color: orange;
+}
+.tools.w3schools:hover {
+  color: greenyellow;
+}
+.tools.mdnWebDocs:hover {
+  color: black;
+}
+.tools.devDocs:hover {
+  color: yellow;
+}
+.tools.trybe:hover {
+  color: green;
+}
