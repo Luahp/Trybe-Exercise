@@ -1,0 +1,44 @@
+h1 {
+  text-align: center;
+}
+
+.first {
+  background-color: rgb(235, 200, 84);
+  font-size: 20px;
+  height: 50px;
+  text-align: center;
+  width: 200px;
+  /* display: inline; */
+  position: relative;
+  left: 200px;
+}
+
+.second {
+  background-color: rgb(219, 219, 219);
+  font-size: 20px;
+  height: 50px;
+  text-align: center;
+  width: 300px;
+  /* left: 500px; */
+  display: inline-block;
+}
+
+.third {
+  background-color: rgb(170, 142, 106);
+  font-size: 20px;
+  height: 50px;
+  text-align: center;
+  width: 300px;
+  display: inline-block;
+}
+.podium {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+li,
+h3 {
+  list-style: none;
+  text-align: center;
+}
