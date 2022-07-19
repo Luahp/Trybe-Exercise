@@ -1,0 +1,15 @@
+:root {
+  font-family: 'Open Sans', 'Helvetica';
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+
+  margin: 1%;
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+}
