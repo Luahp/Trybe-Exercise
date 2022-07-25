@@ -1,8 +1,9 @@
-let numbers = [
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
-  23, 24, 25,
-];
+let numbers = [];
 
-for (let contador = 0; contador < numbers.length; contador++) {
-  console.log(numbers[contador] / 2);
+for (let contador = 1; contador <= 25; contador++) {
+  numbers.push(contador);
+}
+
+for (let contador1 = 0; contador1 < numbers.length; contador1++) {
+  console.log(numbers[contador1] / 2);
 }
