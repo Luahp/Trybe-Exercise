@@ -59,6 +59,7 @@
     <script>
       const title = document.createElement('h1');
       title.innerHTML = 'Exercício 5.2 - JavaScript DOM';
+      title.className = 'title';
 
       const body = document.getElementsByTagName('body')[0];
       body.appendChild(title);
@@ -66,6 +67,7 @@
       const main = document.createElement('main');
       main.className = 'main-content';
       body.appendChild(main);
+      main.style.backgroundColor = 'green';
 
       const section = document.createElement('section');
       section.className = 'center-content';
@@ -78,10 +80,12 @@
       const sectionLeft = document.createElement('section');
       sectionLeft.className = 'left-content';
       main.appendChild(sectionLeft);
+      main.removeChild(sectionLeft);
 
       const sectionRight = document.createElement('section');
       sectionRight.className = 'right-content';
       main.appendChild(sectionRight);
+      sectionRight.style.marginRight = 'auto';
 
       const img = document.createElement('img');
       img.src = 'https://picsum.photos/200';
@@ -109,12 +113,20 @@
       }
       sectionRight.appendChild(ul);
 
+      const itenNine = document.getElementsByTagName('li')[8];
+      const itenTen = document.getElementsByTagName('li')[9];
+      ul.removeChild(itenNine);
+      ul.removeChild(itenTen);
+
       const h3a = document.createElement('h3');
       const h3b = document.createElement('h3');
       const h3c = document.createElement('h3');
       main.appendChild(h3a);
       main.appendChild(h3b);
       main.appendChild(h3c);
+      h3a.className = 'description';
+      h3b.className = 'description';
+      h3c.className = 'description';
     </script>
   </body>
 </html>
