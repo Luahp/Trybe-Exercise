@@ -10,10 +10,9 @@
     <script>
       const paragraph = document.getElementById('paragraph');
       paragraph.style.color = 'red';
-      const p = document.getElementsByClassName('p');
-
-      p[0].style.color = 'pink';
-      p[0].style.fontSize = '20px';
+      const p = document.getElementsByClassName('p')[0];
+      p.style.color = 'pink';
+      p.style.fontSize = '20px';
 
       const subtitle = document.getElementsByTagName('h4')[0];
       subtitle.style.color = 'blue';
