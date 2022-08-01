@@ -55,7 +55,7 @@ createDaysOfTheMonth();
 
 function createHolildayButton(buttonName) {
   let buttonContainer = document.querySelector('.buttons-container');
-  let newButton = ddocument.createElement('button');
+  let newButton = document.createElement('button');
   let newButtonID = 'btn-holiday';
 
   newButton.innerHTML = buttonName;
@@ -64,3 +64,21 @@ function createHolildayButton(buttonName) {
   buttonContainer.appendChild(newButton);
 }
 createHolildayButton('Feriados');
+
+function displayHolidays() {
+  let getHolidayButton = document.querySelector('#btn-holiday');
+  let getHolidays = document.getElementsByClassName('holiday');
+  let oldBackgroundColor = 'rgb(238,238,238)';
+  let setNewColor = 'pink';
+
+  getHolidayButton.addEventListener('click', function () {
+    for (let contador = 0; contador < getHolidays.length; contador += 1) {
+      if (getHolidays[contador].style.backgroundColor === setNewColor) {
+        getHolidays[contador].style.backgroundColor = oldBackgroundColor;
+      } else {
+        getHolidays[contador].style.backgroundColor = setNewColor;
+      }
+    }
+  });
+}
+displayHolidays();
