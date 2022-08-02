@@ -130,3 +130,20 @@ function dayMouseOut() {
   });
 }
 dayMouseOut();
+
+function task(task, color) {
+  let spanTask = document.createElement('span');
+  spanTask.innerHTML = task;
+  addElementToParent(spanTask, '.my-tasks');
+  Subtitlea(color);
+}
+function subtitle(color) {
+  corSubtitle = document.createElement('div');
+  corSubtitle.className = 'task';
+  addElementToParent(corSubtitle, '.my-tasks');
+  corSubtitle.style.backgroundColor = color;
+}
+createButtonHoliday('Feriados');
+createButtonFriday('Sextou');
+zoom();
+task('estudar', 'green');
