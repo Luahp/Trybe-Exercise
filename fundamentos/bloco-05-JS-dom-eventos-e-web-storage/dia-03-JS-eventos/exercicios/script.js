@@ -39,7 +39,7 @@ function createDaysOfTheMonth() {
     if (day === 24 || day === 31) {
       dayIten.className = 'day holiday';
       getDaysList.appendChild(dayIten);
-    } else if (day === 4 || day === 11 || day === 19) {
+    } else if (day === 4 || day === 11 || day === 18) {
       dayIten.className = 'day friday';
       getDaysList.appendChild(dayIten);
     } else if (day === 25) {
@@ -82,3 +82,51 @@ function displayHolidays() {
   });
 }
 displayHolidays();
+
+function createFridayButton(buttonName) {
+  let buttonContainer = document.querySelector('.buttons-container');
+  let newButton = document.createElement('button');
+  let newButtonID = 'btn-friday';
+
+  newButton.innerHTML = buttonName;
+  newButton.id = newButtonID;
+  buttonContainer.appendChild(newButton);
+}
+createFridayButton('Sexta-feira');
+
+function displayFriday(arrFriday) {
+  let getFridayButton = document.querySelector('#btn-friday');
+  let fridays = document.getElementsByClassName('friday');
+  let fridayText = 'SEXTOOOU!!';
+
+  getFridayButton.addEventListener('click', function () {
+    for (let contador = 0; contador < fridays.length; contador += 1) {
+      if (fridays[contador].innerHTML !== fridayText) {
+        fridays[contador].innerHTML = fridayText;
+      } else {
+        fridays[contador].innerHTML = arrFriday[contador];
+      }
+    }
+  });
+}
+
+let decemberFridays = [4, 11, 18, 25];
+displayFriday(decemberFridays);
+
+function dayMouseOver() {
+  let days = document.querySelector('#days');
+  days.addEventListener('mouseover', function (event) {
+    event.target.style.fontSize = '30px';
+    event.target.style.fontWeight = '300';
+  });
+}
+dayMouseOver();
+
+function dayMouseOut() {
+  let days = document.querySelector('#days');
+  days.addEventListener('mouseout', function (event) {
+    event.target.style.fontSize = '20px';
+    event.target.style.fontWeight = '200';
+  });
+}
+dayMouseOut();
