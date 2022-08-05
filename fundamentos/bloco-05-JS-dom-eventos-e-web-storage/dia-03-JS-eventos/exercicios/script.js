@@ -133,17 +133,61 @@ dayMouseOut();
 
 function task(task, color) {
   let spanTask = document.createElement('span');
-  spanTask.innerHTML = task;
+  spanTask.innerText = task;
   addElementToParent(spanTask, '.my-tasks');
-  Subtitlea(color);
+  label(color);
 }
-function subtitle(color) {
-  corSubtitle = document.createElement('div');
-  corSubtitle.className = 'task';
-  addElementToParent(corSubtitle, '.my-tasks');
-  corSubtitle.style.backgroundColor = color;
+function label(color) {
+  colorLabel = document.createElement('div');
+  colorLabel.className = 'task';
+  addElementToParent(colorLabel, '.my-tasks');
+  colorLabel.style.backgroundColor = color;
 }
-createButtonHoliday('Feriados');
-createButtonFriday('Sextou');
-zoom();
+
 task('estudar', 'green');
+// task("dormir", "red");
+function addElementToParent(elementCreated, parentAttached) {
+  //adiciona um elemento criado a um parente
+  const parentName = document.querySelector(parentAttached);
+  parentName.appendChild(elementCreated);
+}
+
+function taskClass() {
+  let selectedTask = document.getElementsByClassName('task selected');
+  let myTask = document.querySelector('.task');
+
+  myTask.addEventListener('click', function (e) {
+    if (selectedTask.length === 0) {
+      e.target.className = 'task selected';
+    } else {
+      e.target.className = 'task';
+    }
+  });
+}
+taskClass();
+
+function dayColor() {
+  let selectedTask = document.getElementsByClassName('task selected');
+
+  let days = document.querySelector('#days');
+  let taskDiv = document.querySelector('.task');
+  //Salva a cor da classe task na variável "taskColor"
+  let taskColor = taskDiv.style.backgroundColor;
+
+  // declararei o evento como parâmetro da função
+  days.addEventListener('click', function (e) {
+    let eventTColor = e.tarrget.color;
+    //Caso não tenha nenhum elemento com essa classe "task selected" E o evento n tiver a mesma cor de fundo da variável "taskColor"
+    if (selectedTask.length > 0 && eventTColor !== taskColor) {
+      //Pega a cor de fundo do primeiro elemento salvo em "selectedTask" e salva na let "color"
+      let color = selectedTask[0].style.backgroundColor;
+      // atribui a cor salva na variável "color" ao evento
+      e.target.style.color = color;
+      //Caso a cor do evento seja igual à da variável "taskColor"
+    } else if (eventTColor === taskColor) {
+      // Altera a cor de fundo do evento para a cor que foi pedida
+      e.target.style.color = 'rgb(119,119,119)';
+    }
+  });
+}
+dayColor();
